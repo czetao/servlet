@@ -1,6 +1,8 @@
 package czt.inter;
 
 
+
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -8,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -16,12 +19,11 @@ import java.util.Map;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 
-/**
- *
- */
+
 @WebServlet(name = "addInter")
 public class addInter extends HttpServlet {
 
+   
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request, response);
     }
@@ -62,6 +64,7 @@ public class addInter extends HttpServlet {
         //封装返回参数（暂时写死）
 
         //设置网页响应类型
+
         response.setContentType("application/json; charset=utf-8");
         //实现具体操作
         PrintWriter out = response.getWriter();
@@ -87,6 +90,7 @@ public class addInter extends HttpServlet {
 
         out.println(json2);
         out.flush();
+
     }
 
 }

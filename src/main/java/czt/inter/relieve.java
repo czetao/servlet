@@ -1,5 +1,6 @@
 package czt.inter;
 
+import com.alibaba.fastjson.JSONObject;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,14 +14,10 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
 
-/**
- *
- */
-@WebServlet(name = "addInter")
-public class addInter extends HttpServlet {
+//合同解除接口
+@WebServlet(name = "relieve")
+public class relieve extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request, response);
@@ -35,8 +32,8 @@ public class addInter extends HttpServlet {
             readerStr = readerStr.concat(line);
         }
 
-        // 使用阿里的fastjson jar包处理json数据
-        HashMap map = JSONObject.parseObject(readerStr, HashMap.class);
+        // 使用阿里的fastjson jar包处理json数据（这里是用map进行接收的，也可以定义vo层容器类接收）
+        HashMap map = com.alibaba.fastjson.JSONObject.parseObject(readerStr, HashMap.class);
 
 
         //重新封装请求体中的参数
@@ -46,7 +43,7 @@ public class addInter extends HttpServlet {
         Object sign = map.get("sign");
         Object data2 = map.get("data");
 
-        JSONObject json = new JSONObject();
+        com.alibaba.fastjson.JSONObject json = new com.alibaba.fastjson.JSONObject();
         json.put("type",type);
         json.put("srcsys",srcsys);
         json.put("syncts",syncts);
@@ -60,6 +57,7 @@ public class addInter extends HttpServlet {
 
 
         //封装返回参数（暂时写死）
+        //还差一些响应参数的逻辑判断
 
         //设置网页响应类型
         response.setContentType("application/json; charset=utf-8");
@@ -77,8 +75,8 @@ public class addInter extends HttpServlet {
         //接口调用成功，即true
         json2.put("result",true);
         json2.put("msg","***");
-       // Map<String ,Object > data = new HashMap<String, Object>();
-        JSONObject data = new JSONObject();
+        // Map<String ,Object > data = new HashMap<String, Object>();
+        com.alibaba.fastjson.JSONObject data = new JSONObject();
         data.put("billid","10086");
         data.put("ncbillid","NC10086");
         data.put("dresult",true);

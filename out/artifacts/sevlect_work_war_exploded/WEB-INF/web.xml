@@ -6,12 +6,23 @@
 
     <servlet>
         <servlet-name>addInter</servlet-name>
-        <servlet-class>addInter</servlet-class>
+        <servlet-class>czt.inter.addInter</servlet-class>
     </servlet>
 
     <servlet-mapping>
         <servlet-name>addInter</servlet-name>
         <url-pattern>/addInter</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>relieve</servlet-name>
+        <servlet-class>czt.inter.relieve</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>relieve</servlet-name>
+        <url-pattern>/re</url-pattern>
+    </servlet-mapping>
+
+
 
 </web-app>

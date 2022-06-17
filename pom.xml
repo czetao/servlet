@@ -19,7 +19,7 @@
         <!--<dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
-            <version>1.2.41</version>
+            <version>1.2.83</version>
         </dependency>-->
         <!-- https://mvnrepository.com/artifact/net.sf.json-lib/json-lib -->
 >>>>>>> a8c0258ad4d656fe5caaf13941facc0632e3851c
@@ -37,7 +37,7 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
-            <version>1.2.41</version>
+            <version>1.2.83</version>
         </dependency>
     </dependencies>
     
